@@ -14,11 +14,11 @@ export class PokemonsService {
 
   getPokemons(): Observable<Pokemon[]> {
     
-    return this.http.get<Pokemon[]>(this.APIurl );
+    return this.http.get<Pokemon[]>(this.APIurl+"/?limit=500" );
   }
   getPokemonbyId(id:number): Observable<Pokemon> {
     
-    return this.http.get<Pokemon>(this.APIurl);
+    return this.http.get<Pokemon>(this.APIurl+ id);
   }
   setPokemon(Pokemon): void {    
     this.SelectedPokemon.next(Pokemon);
