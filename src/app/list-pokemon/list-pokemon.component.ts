@@ -18,8 +18,8 @@ export class ListPokemonComponent implements OnInit {
 
     this.PokemonsService.getPokemons().subscribe(Pokedata => this.Pokemons=Pokedata.results);
   }
-  selectPokemon(Pokemon:Pokemon){
-    this.PokemonsService.setPokemon(Pokemon);
+  selectPokemon(pokemon:Pokemon){
+    this.PokemonsService.setPokemon(pokemon);
 
   }
   

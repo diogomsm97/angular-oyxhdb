@@ -7,12 +7,21 @@ import { HelloComponent } from './hello.component';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { PokemonsService } from './pokemons.service';
+import {RouterModule,Routes} from '@angular/router';
+
+const routes:Routes = [
+  {path: '' , component:ListPokemonComponent },
+  {path: 'pokemons/:pokemonid', component:DetailPokemonComponent},
+  {path: 'pokemons', component:ListPokemonComponent}
+
+];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule, 
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
  ],
   declarations: [ AppComponent, HelloComponent, ListPokemonComponent, DetailPokemonComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ PokemonsService]
+  providers: [ PokemonsService],
+  exports: [ RouterModule ]
 })
 export class AppModule { }

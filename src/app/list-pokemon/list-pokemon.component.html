@@ -2,7 +2,9 @@
 <nav>Gotta catch them all </nav>
 
 <ul>
-<li *ngFor="let Pokemon of Pokemons">{{Pokemon.name}}</li>
+<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="selectPokemon(Pokemon)">
+  <a [title]="pokemon.name" [routerLink]="['/pokemons',pokemonid+1]" >{{pokemonid+1}} {{pokemon.name}}  </a>
+</li>
 
 
 </ul>

@@ -7,18 +7,19 @@ import { Observable, of, BehaviorSubject } from 'rxjs';
 @Injectable()
 export class PokemonsService {
   private SelectedPokemon=new BehaviorSubject(null);
-  private APIurl='https://pokeapi.co/api/v2/pokemon';
+  private APIurl='https://pokeapi.co/api/v2/pokemon/';
 
 
   constructor(private http : HttpClient) { }
 
   getPokemons(): Observable<Pokemon[]> {
     
-    return this.http.get<Pokemon[]>(this.APIurl+"/?limit=500" );
+    return this.http.get<Pokemon[]>(this.APIurl+"?limit=807" );
   }
   getPokemonbyId(id:number): Observable<Pokemon> {
-    
+    console.log(id);
     return this.http.get<Pokemon>(this.APIurl+ id);
+    
   }
   setPokemon(Pokemon): void {    
     this.SelectedPokemon.next(Pokemon);
