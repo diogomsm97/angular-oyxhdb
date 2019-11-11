@@ -17,7 +17,7 @@ export class DetailPokemonComponent implements OnInit {
     this.route.paramMap.
                subscribe(params => this.SelectedPokemonID= +params.get("pokemonid"));
     this.pokemonsService.getPokemonbyId(this.SelectedPokemonID)
-      .subscribe(Pokemon => {this.SelectedPokemon=Pokemon.results;console.log(this.SelectedPokemon);});
+      .subscribe(Pokemon => {this.SelectedPokemon=Pokemon;console.log(this.SelectedPokemon);});
   }
 
 }
