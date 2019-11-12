@@ -12,4 +12,5 @@ stat:string;
 base_stat:number;
 evolutions=[];
 
+
 }

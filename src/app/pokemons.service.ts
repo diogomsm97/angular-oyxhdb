@@ -14,7 +14,7 @@ export class PokemonsService {
 
   getPokemons(): Observable<Pokemon[]> {
     
-    return this.http.get<Pokemon[]>(this.APIurl+"?limit=807" );
+    return this.http.get<Pokemon[]>(this.APIurl+"?limit=151" );
   }
   getPokemonbyId(id:number): Observable<Pokemon> {
     console.log(id);

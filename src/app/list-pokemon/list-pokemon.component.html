@@ -1,14 +1,23 @@
-<h1>The Official Pokedex!</h1>
-<nav>Gotta catch them all </nav>
 
-<ul>
-<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)">
+<h1>
+  <img src="https://www.pnglot.com/pngfile/detail/298-2987591_255-kb-png-pokemon-logo-transparent-background.png"alt=""></h1>
+  <nav> Pokemon List Down below </nav>
+<!--<ul>
+<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
   <a [routerLink]="['/pokemons',pokemonid+1]" >
   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" >
-  <span>{{pokemonid+1}} {{pokemon.name}}</span> 
+  <span> #{{pokemonid+1}} {{pokemon.name}}</span> 
   </a>
  
 </li>
 
-
-</ul>
+</ul>-->
+<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
+<div class="card" style="width: 10rem;">
+  <a [routerLink]="['/pokemons',pokemonid+1]" >
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" class="card-img-top" alt="API RESOURCE NOT FOUND">
+  <div class="card-body">
+    <p class="card-text">#{{pokemonid+1}} {{pokemon.name}}</p>
+  </div>
+  </a>
+</div>
