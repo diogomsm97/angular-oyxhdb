@@ -12,12 +12,20 @@
 </li>
 
 </ul>-->
-<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
-<div class="card" style="width: 10rem;">
-  <a [routerLink]="['/pokemons',pokemonid+1]" >
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" class="card-img-top" alt="API RESOURCE NOT FOUND">
-  <div class="card-body">
-    <p class="card-text">#{{pokemonid+1}} {{pokemon.name}}</p>
+
+<div class="d-flex flex-wrap">
+  <li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
+
+
+    <div class="card" >
+       <a [routerLink]="['/pokemons',pokemonid+1]" >
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" class="card-img-top" alt="API RESOURCE NOT FOUND">
+          <div class="card-body">
+          <p class="card-text">#{{pokemonid+1}} {{pokemon.name}}</p>
+          </div>
+      </a>
+  
   </div>
-  </a>
+  </li>
+  
 </div>
