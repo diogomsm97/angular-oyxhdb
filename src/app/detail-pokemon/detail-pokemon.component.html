@@ -1,6 +1,6 @@
 <div *ngIf="SelectedPokemon" >
 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" alt="">
-<p  *ngIf="{{SelectedPokemon.image()}}" >
+<p *ngIf="SelectedPokemon" >
   Name: <span>{{SelectedPokemon.name}}</span>
  <br>
   Types: <span *ngFor="let type of SelectedPokemon.types " > {{type.type.name}}</span> 

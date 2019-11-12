@@ -2,8 +2,12 @@
 <nav>Gotta catch them all </nav>
 
 <ul>
-<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="selectPokemon(Pokemon)">
-  <a [title]="pokemon.name" [routerLink]="['/pokemons',pokemonid+1]" >{{pokemonid+1}} {{pokemon.name}}  </a>
+<li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)">
+  <a [routerLink]="['/pokemons',pokemonid+1]" >
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" >
+  <span>{{pokemonid+1}} {{pokemon.name}}</span> 
+  </a>
+ 
 </li>
 
 
