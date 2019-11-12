@@ -1,12 +1,15 @@
 export class Pokemon {
 id:number;
 name:string;
-type: {
+types: {
   attribute1:string,
   attribute2:string
 };
-
-stats=[]
-evolutions=[]
+Abilities=[];
+Ability:string;
+stats=[];
+stat:string;
+base_stat:number;
+evolutions=[];
 
 }

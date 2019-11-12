@@ -1,19 +1,70 @@
-<div *ngIf="SelectedPokemon" >
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" alt="">
-<p *ngIf="SelectedPokemon" >
-  Name: <span>{{SelectedPokemon.name}}</span>
- <br>
-  Types: <span *ngFor="let type of SelectedPokemon.types " > {{type.type.name}}</span> 
-</p>
+<h1>{{SelectedPokemon.name}}</h1>
+
+<div *ngIf="SelectedPokemon">
+  <!-- POKEMON DETAILS -->
+  <figure class="Detail_PokeIMG">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" alt="">
+  <figcaption>Front </figcaption>
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{SelectedPokemon.id}}.png" alt="">
+  <figcaption>Back</figcaption>
+  </figure>
+  <!--FEMALE VERSION -->
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" alt="">
+  
+
+  <!-- SHINY VERSION -->
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{SelectedPokemon.id}}.png" alt="">
+  <img 
+  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{SelectedPokemon.id}}.png" alt="">
+  
+  <!--<h2>Name:{{SelectedPokemon.name}}</h2>-->
+  <h4>Types:</h4>
+  <ul>
+    <li *ngFor="let type of SelectedPokemon.types">
+    {{type.type.name}}
+    </li>
+  </ul>
+  <h4>Stats:</h4>
+  <ul>
+    <li *ngFor="let stat of SelectedPokemon.stats">
+    {{stat.stat.name}}:{{stat.base_stat}}
+    </li>
+  </ul>
+
+
+
 </div>
 
 
 
-<!--<p  *ngIf="SelectedPokemon" >
-  <div *ngFor="let image of SelectedPokemon.images">
-    <img src="{{SelectedPokemon.img()}}">
-  </div>
+
+
+
+
+
+
+
+
+<!-- CODIGO DE TESTES
+
+
+<div *ngIf="SelectedPokemon" >
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" alt="">
+
+
+<ul *ngIf="SelectedPokemon" >
  Name: <span>{{SelectedPokemon.name}}</span>
  <br>
-  Types: <span *ngFor="let type of SelectedPokemon.types " > {{type.type.name}}</span> 
-</p>-->
+  Types: <span *ngFor="let type of SelectedPokemon.types " > {{type.type.name}}</span>
+  
+  <br>
+  Stats: <span *ngFor="let stat of SelectedPokemon.stats"> {{stat.stat.name}}:{{stat.base_stat}}</span>
+  <br>
+  Abilities: <span *ngFor="let ability of SelectedPokemon.abilities">{{ability.ability.name}}</span>
+
+</ul>
+</div>
+
+
+-->
+
