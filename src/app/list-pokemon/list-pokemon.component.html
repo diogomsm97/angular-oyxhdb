@@ -1,7 +1,10 @@
 
+<body>
 <h1>
-  <img src="https://www.pnglot.com/pngfile/detail/298-2987591_255-kb-png-pokemon-logo-transparent-background.png"alt=""></h1>
+  <img src="https://www.pnglot.com/pngfile/detail/298-2987591_255-kb-png-pokemon-logo-transparent-background.png" class="Banner" alt=""></h1>
   <nav> Pokemon List Down below </nav>
+  <br>
+  <br>
 <!--<ul>
 <li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
   <a [routerLink]="['/pokemons',pokemonid+1]" >
@@ -14,18 +17,19 @@
 </ul>-->
 
 <div class="d-flex flex-wrap">
-  <li *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
+  <ul *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
 
 
-    <div class="card" >
+    <div class="hvr-grow" class="card" >
        <a [routerLink]="['/pokemons',pokemonid+1]" >
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" class="card-img-top" alt="API RESOURCE NOT FOUND">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" class="cardIMG" alt="API RESOURCE NOT FOUND">
           <div class="card-body">
           <p class="card-text">#{{pokemonid+1}} {{pokemon.name}}</p>
           </div>
       </a>
   
   </div>
-  </li>
+  </ul>
   
 </div>
+</body>

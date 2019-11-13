@@ -1,5 +1,20 @@
-
 .Detail_PokeIMG{
   display :block;
 
+}
+.center-screen {
+  
+  margin-top: 3rem;
+  text-align: center;
+  
+}
+
+.cardIMG {
+filter: brightness(0);
+}
+cardIMG:hover {
+filter: none;
+}
+img#teste{
+  filter: brightness (0%);
 }
