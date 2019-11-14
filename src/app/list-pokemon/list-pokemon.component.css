@@ -16,8 +16,9 @@
   transform: scale(1.1);
 }
 
-.body{
+body{
   font-family: Lato;
+  background-color: black
 }
 .cardIMG {
 
@@ -36,6 +37,7 @@ nav{
     -o-animation: color-change 1s infinite;
     -ms-animation: color-change 1s infinite;
     animation: color-change 1s infinite;
+    margin-top: 30px;
 }
 @-webkit-keyframes color-change {
     0% { color: black; }
@@ -64,7 +66,7 @@ nav{
 }
 .Banner{
    display: block;
-    margin-left: auto;
-    margin-right: auto
+    margin-left: 195px;
+    margin-right: auto;
 }
 

@@ -1,22 +1,33 @@
-
-<h1 class="center-screen">{{SelectedPokemon.name}}</h1>
+<body>
+<h1 class="center-screen">{{SelectedPokemon.name ||'Loading...'}}</h1>
 
 <div *ngIf="SelectedPokemon">
   <!-- POKEMON DETAILS -->
-  <figure class="Detail_PokeIMG">
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png"  alt="">
-  <figcaption>Front </figcaption>
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{SelectedPokemon.id}}.png" alt="">
-  <figcaption>Back</figcaption>
-  </figure>
+  <div class="row"id="pokedetails">
+    <div class="column">
+     <figure >
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" class="Detail_PokeIMG" alt="">
+      <figcaption>Front </figcaption>
+      
+      </figure>
+    </div>
+    <div class="column">
+    <figure>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{SelectedPokemon.id}}.png" class="Detail_PokeIMG" alt="">
+      <figcaption>Back</figcaption>
+    </figure>
+    </div>
+  </div>
+ 
+  
 
   <!--FEMALE VERSION -->
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" alt="">
-  
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
+
   <!-- SHINY VERSION -->
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{SelectedPokemon.id}}.png" alt="">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
   <img 
-  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{SelectedPokemon.id}}.png" alt="">
+  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
   
   <!--<h2>Name:{{SelectedPokemon.name}}</h2>-->
   <h4>Types:</h4>
@@ -57,26 +68,29 @@
     <tr>
       <td>
          
-          <select name="Poke_moves" >
-    <option value="1"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}</option>
-          </select>
-            <select name="Poke_moves" >
-    <option value="2"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}</option>
-          </select>
-            <select name="Poke_moves" >
-    <option value="3"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}</option>
-          </select>
-            <select name="Poke_moves" >
-    <option value="4"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}</option>
-          </select>
+    <select name="Poke_moves1" >
+        <option value="1"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+        </option>
+    </select>
+    <select name="Poke_moves2" >
+        <option value="2"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+        </option>
+    </select>
+    <select name="Poke_moves3" >
+        <option value="3"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+        </option>
+    </select>
+    <select name="Poke_moves4" >
+        <option value="4"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+        </option>
+    </select>
         
       </td>
     </tr>
   </tbody>
 </table>
+</body>
 <!-- MOVES -->
-
-
 
 
 
