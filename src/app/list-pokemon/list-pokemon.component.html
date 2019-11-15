@@ -28,7 +28,7 @@
 </ul>-->
 
   <div class="d-flex flex-wrap">
-    <ul *ngFor="let pokemon of Pokemons | paginate: { itemsPerPage: 151,currentPage: page, totalItems: 807}"(click)="SelectPokemon(Pokemon)" class="current" >
+    <ul *ngFor="let pokemon of Pokemons | paginate: { itemsPerPage: 32,currentPage: page, totalItems: 807}"(click)="SelectPokemon(Pokemon)" class="current" >
       <div class="hvr-grow" class="card" >
         <a [routerLink]="['/pokemons',pokemon.url.split('/')[6]]" >
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.url.split('/')[6]}}.png" class="cardIMG" alt="API RESOURCE NOT FOUND">
@@ -40,13 +40,13 @@
     </ul>
   </div>
 
-  <div class="pgndiv">
+  <div class="paginationDIV">
       <pagination-controls class="pgn" (pageChange)="page = $event" 
                       directionLinks="true"
                       autoHide="true"
                       responsive="true"
-                      previousLabel="Anterior"
-                      nextLabel="Seguinte"></pagination-controls>
+                      previousLabel="Previous"
+                      nextLabel="Next"></pagination-controls>
   </div>
  <!-- <div class="container">
     <div class="row">
