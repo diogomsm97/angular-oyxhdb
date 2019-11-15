@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Pokemon} from '../pokemon';
 import {PokemonsService} from '../pokemons.service';
+
+
 @Component({
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',
@@ -8,6 +10,7 @@ import {PokemonsService} from '../pokemons.service';
 })
 export class ListPokemonComponent implements OnInit {
   Pokemons:Pokemon[];
+  
   SelectedPokemon:Pokemon;
   constructor(private PokemonsService : PokemonsService) { }
 

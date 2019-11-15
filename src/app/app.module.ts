@@ -8,6 +8,7 @@ import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { PokemonsService } from './pokemons.service';
 import {RouterModule,Routes} from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const routes:Routes = [
   {path: '' , component:ListPokemonComponent },
@@ -17,7 +18,7 @@ const routes:Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes),NgxPaginationModule
  ],
   declarations: [ AppComponent, HelloComponent, ListPokemonComponent, DetailPokemonComponent ],
   bootstrap:    [ AppComponent ],

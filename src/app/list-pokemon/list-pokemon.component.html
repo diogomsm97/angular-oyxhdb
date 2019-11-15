@@ -27,20 +27,37 @@
 
 </ul>-->
 
-<div class="d-flex flex-wrap">
-  <ul *ngFor="let pokemon of Pokemons;index as pokemonid"(click)="SelectPokemon(Pokemon)" class="current" >
-
-
-    <div class="hvr-grow" class="card" >
-       <a [routerLink]="['/pokemons',pokemonid+1]" >
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonid+1}}.png" class="cardIMG" alt="API RESOURCE NOT FOUND">
-          <div class="card-body">
-          <p class="card-text">#{{pokemonid+1}} {{pokemon.name}}</p>
-          </div>
-      </a>
-  
+  <div class="d-flex flex-wrap">
+    <ul *ngFor="let pokemon of Pokemons | paginate: { itemsPerPage: 151,currentPage: page, totalItems: 807}"(click)="SelectPokemon(Pokemon)" class="current" >
+      <div class="hvr-grow" class="card" >
+        <a [routerLink]="['/pokemons',pokemon.url.split('/')[6]]" >
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.url.split('/')[6]}}.png" class="cardIMG" alt="API RESOURCE NOT FOUND">
+            <div class="card-body">
+            <p class="card-text">#{{pokemon.url.split('/')[6]}} {{pokemon.name}}</p>
+            </div>
+          </a>
+      </div>
+    </ul>
   </div>
-  </ul>
-  
-</div>
+
+  <div class="pgndiv">
+      <pagination-controls class="pgn" (pageChange)="page = $event" 
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      previousLabel="Anterior"
+                      nextLabel="Seguinte"></pagination-controls>
+  </div>
+ <!-- <div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <button style="margin:5px;" class="btn btn-secondary">Atrás</button>
+        <button style="margin:5px;" class="btn btn-secondary">Afrente</button>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>-->
 </body>
