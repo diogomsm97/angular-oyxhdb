@@ -70,54 +70,78 @@
   </div>
 </div>
 
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8"  >
 
+      <table class="table-sm table-dark table-hover" >
+        <thead>
+          <tr >
+            
+            <th  scope="col"> <a style="margin-left:20px;">Stats</a></th>
+            <th scope="col"><a style="margin-right:20px;">Value</a></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stat of SelectedPokemon.stats">
+            
+            <td ><a style="margin-left:20px;">{{stat.stat.name}}</a></td>
+            <td><a style="margin-left:20px;">{{stat.base_stat}}</a></td>
+            
+          </tr>
+          <br>
+          <thead>
+            <tr >
+                <th scope="col"  ><a style="margin-left:20px;">Possible Moveset</a></th>
+            </tr>
+          </thead>
+          <tr>
+            <td style="border: 0;height:50px;">
+              <div class="container">
+                <div style="margin-left:60px;" class="row">
+                  <div class="col">
+                    <select class="custom-select" name="Poke_moves1" >
+                    <option value="1"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+                    </option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <select class="custom-select" name="Poke_moves2" >
+                    <option value="2"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+                    </option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <select class="custom-select" name="Poke_moves3" >
+                    <option value="3"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+                    </option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <select class="custom-select" name="Poke_moves4" >
+                    <option value="4"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
+                    </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </td>
+            
 
-<table  class="table-sm table-dark table-hover" >
-  <thead>
-    <tr >
-       
-      <th scope="col">Stats</th>
-      <th scope="col">Value</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let stat of SelectedPokemon.stats">
-      
-      <td>{{stat.stat.name}}</td>
-      <td>{{stat.base_stat}}</td>
-      
-    </tr>
-    <br>
-    <thead>
-       <tr >
-          <th scope="col"  >Possible Moveset</th>
-       </tr>
-    </thead>
-    <tr>
-      <td>
-         
-    <select name="Poke_moves1" >
-        <option value="1"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
-        </option>
-    </select>
-    <select name="Poke_moves2" >
-        <option value="2"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
-        </option>
-    </select>
-    <select name="Poke_moves3" >
-        <option value="3"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
-        </option>
-    </select>
-    <select name="Poke_moves4" >
-        <option value="4"  *ngFor="let move of SelectedPokemon.moves">{{move.move.name}}
-        </option>
-    </select>
-        
-      </td>
-    </tr>
-  </tbody>
-</table>
+          </tr>
+          <tr>
+            <td style="border: 0;height:40px;">
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <div class="col-2">
+    </div>
 </body>
 <!-- MOVES -->
 
