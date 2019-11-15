@@ -55,3 +55,44 @@ td {
   text-align: left;
   border: 1px solid white
 }
+li {
+  list-style-type: none;
+  margin-left:-6%;
+}
+
+
+div #colorName{
+ webkit-animation: color-change 5s infinite;
+    -moz-animation: color-change 5s infinite;
+    -o-animation: color-change 5s infinite;
+    -ms-animation: color-change 5s infinite;
+    animation: color-change 5s infinite;
+}
+@-webkit-keyframes color-change {
+    0% { color: black; }
+    50% { color: blue; }
+    100% { color: yellow; }
+}
+@-moz-keyframes color-change {
+    0% { color: rgb(119, 0, 255); }
+    50% { color: green; }
+    100% { color: red; }
+}
+@-ms-keyframes color-change {
+    0% { color: rgb(145, 255, 0); }
+    50% { color: orange; }
+    100% { color: red; }
+}
+@-o-keyframes color-change {
+    0% { color: red; }
+    50% { color: rgb(214, 67, 92); }
+    100% { color: red; }
+}
+@keyframes color-change {
+    0% { color: rgb(39, 214, 4); }
+    20% { color: rgb(25, 98, 235); }
+    40% { color: rgb(233, 35, 35); }
+    60% { color: rgb(231, 95, 158); }
+    80% { color: rgb(141, 76, 46); }
+    100% { color: rgb(14, 240, 71)}
+}

@@ -1,48 +1,77 @@
-<body>
-<h1 class="center-screen">{{SelectedPokemon.name ||'Loading...'}}</h1>
+<body >
 
-<div *ngIf="SelectedPokemon">
+<div class="container" style="margin-top:20px;">
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+      <div class="card text-white mb-3" style="max-width: 400rem;border-radius:50px;width: 100%;">
+        <div id="colorName" class="card-header" style="border-radius:50px 50px 0px 0px;background-color:#454d55;"><h1 class="center-screen">{{SelectedPokemon.name ||'Loading...'}}</h1></div>
+          <div class="card-body">
+            <h5 class="card-title">Secondary card title</h5>
+            <p class="card-text">
+            </p>
+            <div class="center-screen" *ngIf="SelectedPokemon">
   <!-- POKEMON DETAILS -->
-  <div class="row"id="pokedetails">
-    <div class="column">
-     <figure >
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" class="Detail_PokeIMG" alt="">
-      <figcaption>Front </figcaption>
-      
-      </figure>
-    </div>
-    <div class="column">
-    <figure>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{SelectedPokemon.id}}.png" class="Detail_PokeIMG" alt="">
-      <figcaption>Back</figcaption>
-    </figure>
-    </div>
-  </div>
+              <div class="row" id="pokedetails">
+
+                <div class="col ">
+                  <figure >
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" class="Detail_PokeIMG" alt="">
+                    <figcaption>Front </figcaption>
+                  </figure>
+                </div>
+                <div  class="col">
+                  <figure >
+                    <img  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{SelectedPokemon.id}}.png" class="Detail_PokeIMG" alt="">
+                    <figcaption>Back</figcaption>
+                  </figure>
+                </div>
+              </div>     
  
   
 
-  <!--FEMALE VERSION -->
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
+              <!--FEMALE VERSION -->
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
 
-  <!-- SHINY VERSION -->
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
-  <img 
-  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
-  
-  <!--<h2>Name:{{SelectedPokemon.name}}</h2>-->
-  <h4>Types:</h4>
-  <ul>
-    <li *ngFor="let type of SelectedPokemon.types">
-    {{type.type.name}}
-    </li>
-  </ul>
-  <!--<h4>Stats:</h4>
-  <ul>
-    <li *ngFor="let stat of SelectedPokemon.stats">
-    {{stat.stat.name}}:{{stat.base_stat}}
-    </li>
-  </ul>-->
+              <!-- SHINY VERSION -->
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
+              <img 
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/{{SelectedPokemon.id}}.png" class="IMGshiny" alt="">
+              
+              <!--<h2>Name:{{SelectedPokemon.name}}</h2>-->
+              <h4>Types:</h4>
+              <ul>
+                <li *ngFor="let type of SelectedPokemon.types">
+                {{type.type.name}}
+                </li>
+              </ul>
+                <!--<h4>Stats:</h4>
+                <ul>
+                  <li *ngFor="let stat of SelectedPokemon.stats">
+                  {{stat.stat.name}}:{{stat.base_stat}}
+                  </li>
+                </ul>-->
+                <div class="card" style="width: 18rem;color:black;width:100%;height:100px;border-radius:0px 0px 45px 45px;">
+                  <h4>Types:</h4>
+                    <ul>
+                     <li *ngFor="let type of SelectedPokemon.types">
+                       
+                      {{type.type.name}}
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="col-2">
+    </div>
+  </div>
 </div>
+
+
+
 <table  class="table-sm table-dark table-hover" >
   <thead>
     <tr >
