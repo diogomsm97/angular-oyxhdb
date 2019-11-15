@@ -24,6 +24,12 @@ body{
 
 filter:brightness(0);
 }
+
+.imgPokemon{
+margin-left:"6%";
+height:"20vW";max-height: "40vw;";
+
+}
 .cardIMG:hover {
 filter:none;
 }
